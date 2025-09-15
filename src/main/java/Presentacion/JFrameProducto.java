@@ -45,6 +45,7 @@ public class JFrameProducto extends JFrame{
         setLocationRelativeTo(null); //centra la ventana
         buildUI();
         tblProducto.setData(controlador.listar());
+        controlador.cargarDatos();
         setCombo();
         setVisible(true);
     }

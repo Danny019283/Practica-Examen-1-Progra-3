@@ -19,25 +19,14 @@ public class ControladorProducto {
 
     public void cargarDatos() {
         // Sembrar si está vacío
+        Tipo t1 = new Tipo(1, "Canasta basica", 5);
+        backendTipo.AgregarTipo(t1);
 
-        if (backend.listar().isEmpty()) {
+        Tipo t2 = new Tipo(2, "Electrodomésticos", 15);
+        backendTipo.AgregarTipo(t2);
 
-            Tipo t1 = new Tipo(1, "Canasta basica", 5);
-            backendTipo.AgregarTipo(t1);
-
-            Tipo t2 = new Tipo(2, "Electrodomésticos", 15);
-            backendTipo.AgregarTipo(t2);
-
-            Tipo t3 = new Tipo(3, "Bebidas", 10);
+        Tipo t3 = new Tipo(3, "Bebidas", 10);
             backendTipo.AgregarTipo(t3);
-
-            backend.insertar(new Producto(123, "Leche", 1000, false, t1));
-            backend.insertar(new Producto(124, "Arroz", 800, false, t1));
-            backend.insertar(new Producto(200, "Refrigeradora", 350000, true, t2));
-            backend.insertar(new Producto(201, "Coca Cola 2L", 1500, false, t3));
-
-        }
-
     }
 
     public void agregarProduc(ActionEvent e, Producto nuevo, tablaProducto tblProducto) {
